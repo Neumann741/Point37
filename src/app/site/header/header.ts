@@ -10,9 +10,6 @@ import { Carrinho } from './carrinho/carrinho';
 })
 export class Header {
 
-
-
-
    statusCarrinho = signal<boolean>(false)
 
    alteraCarrinho() {
