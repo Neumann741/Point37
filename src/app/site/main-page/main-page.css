@@ -1,0 +1,102 @@
+.main-content {
+  color: #202020;
+  background-color: #f3eee5;
+}
+
+.collection-preview {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: clamp(5rem, 10vw, 9rem) 0;
+}
+
+.collection-preview__eyebrow {
+  margin-bottom: 1rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.collection-preview h2 {
+  max-width: 850px;
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(2.8rem, 7vw, 6.5rem);
+  font-weight: 800;
+  line-height: 0.98;
+}
+
+.collection-preview__description {
+  max-width: 520px;
+  margin-top: 1.5rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  line-height: 1.7;
+}
+
+.collection-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-top: clamp(3rem, 7vw, 6rem);
+}
+
+.collection-card {
+  min-height: 330px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: #fff;
+  border-radius: 28px;
+  transition: transform 0.35s ease;
+}
+
+.collection-card:hover {
+  transform: translateY(-8px);
+}
+
+.collection-card span,
+.collection-card h3,
+.collection-card p {
+  font-family: 'Poppins', sans-serif;
+}
+
+.collection-card span {
+  margin-bottom: auto;
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.collection-card h3 {
+  font-size: clamp(1.7rem, 3vw, 2.5rem);
+  font-weight: 800;
+}
+
+.collection-card p {
+  max-width: 280px;
+  margin-top: 0.75rem;
+  line-height: 1.5;
+}
+
+.collection-card--green {
+  background-color: #5ba25b;
+}
+
+.collection-card--blue {
+  background-color: #5b95a2;
+}
+
+.collection-card--red {
+  background-color: #843434;
+}
+
+@media (max-width: 760px) {
+  .collection-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .collection-card {
+    min-height: 260px;
+  }
+}
