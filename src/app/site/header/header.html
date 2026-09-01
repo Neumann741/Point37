@@ -16,7 +16,10 @@
 
     
     <div  aria-label="Espaço para o perfil">
-      <button class="profile-space" >Carrinho</button>
+      <button (click)="alteraCarrinho()" >Carrinho</button>
+      @if (statusCarrinho()) {
+        <app-carrinho></app-carrinho>
+      }
     </div>
   </div>
 
