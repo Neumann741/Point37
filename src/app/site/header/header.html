@@ -34,9 +34,6 @@
         <span class="cart-button__text">Carrinho</span>
       </button>
 
-      @if (statusCarrinho()) {
-        <app-carrinho (fechar)="fechaCarrinho()"></app-carrinho>
-      }
     </div>
   </div>
 
@@ -86,3 +83,7 @@
     alt="Garrafa de Beefeater London"
   >
 </header>
+
+@if (statusCarrinho()) {
+  <app-carrinho (fechar)="fechaCarrinho()"></app-carrinho>
+}
