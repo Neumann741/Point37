@@ -5,28 +5,33 @@
         <h1>Destilados para bons momentos</h1>
 
         <p class="descricao-prod">
-            Curadoria de whislies, gins, runs e bebidas especiais
+            Curadoria de whiskeys, gins, runs e bebidas especiais
             para celebrar, presentear ou apreciar
         </p>
-
-        <div class="card-produto">
+     <div class="grid-prod">
+        @for (item of produtos; track $index) {
+        <article class="produto-card", let produto of produtos>
+        <div class="card-produto-cont">
             <span class="categoria-prod">
-                {{produto.categoria}}
+                {{item.categoria}}
             </span>
 
-            <h2>{{produto.nome}}</h2>
+            <h2>{{item.nome}}</h2>
 
 
             <p class="detalhes-prod">
-                {{produto.volume}} . {{produto.teor}}
+               {{item.volume}} . {{item.teor}}
             </p>
 
             <div class="prod-footer">
                 <strong>
-                    {{produto.preco | currency:'BRL'}}
+                   R$ {{item.preco}}
                 </strong>
 
+                
             </div>
+        </div>
+    </article>}
         </div>
     </section>
 </main>
