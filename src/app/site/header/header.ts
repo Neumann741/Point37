@@ -1,9 +1,11 @@
 import { Component, inject, signal } from '@angular/core';
 import { Carrinho } from './carrinho/carrinho';
+import { RouterLink } from '@angular/router';
+
 
 
 @Component({
-  imports: [Carrinho],
+  imports: [Carrinho, RouterLink],
   selector: 'app-header',
   styleUrl: './header.css',
   templateUrl: './header.html',
