@@ -14,9 +14,26 @@
       <a href="#">Delivery</a>
     </nav>
 
-    
-    <div  aria-label="Espaço para o perfil">
-      <button (click)="alteraCarrinho()" >Carrinho</button>
+    <div class="cart-space">
+      <button
+        class="cart-button"
+        type="button"
+        aria-label="Abrir carrinho"
+        [attr.aria-expanded]="statusCarrinho()"
+        (click)="alteraCarrinho()"
+      >
+        <svg
+          class="cart-button__icon"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path d="M3 3h2l2.2 10.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.6L20 7H6" />
+          <circle cx="9" cy="19" r="1.5" />
+          <circle cx="17" cy="19" r="1.5" />
+        </svg>
+        <span class="cart-button__text">Carrinho</span>
+      </button>
+
       @if (statusCarrinho()) {
         <app-carrinho></app-carrinho>
       }
