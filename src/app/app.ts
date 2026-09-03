@@ -7,7 +7,7 @@ import { PagProd } from "./site/pag-prod/pag-prod";
 
 
 @Component({
-  imports: [RouterOutlet, Header, MainPage, PagProd],
+  imports: [RouterOutlet, Header, MainPage, PagProd, Footer],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',
