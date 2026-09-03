@@ -1,1 +1,10 @@
-<p>post-produto works!</p>
+<form (submit)="cadastrarProduto($event)">
+
+    <input type="text" [formField]="postForm.nome" placeholder="Nome">
+    <input type="text" [formField]="postForm.descricao" placeholder="Descrição">
+    <input type="number" inputmode="numeric" [formField]="postForm.preco" placeholder="Preço">
+    <input type="text" [formField]="postForm.urlImagem" placeholder="Url">
+
+    <button>Post</button>
+
+</form>

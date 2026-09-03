@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
+import { PostProduto } from "./post-produto/post-produto";
 
 @Component({
-  imports: [],
+  imports: [PostProduto],
   selector: 'app-pag-adm',
   styleUrl: './pag-adm.css',
   templateUrl: './pag-adm.html',

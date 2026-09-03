@@ -1,6 +1,6 @@
 export interface Posts {
   "nome": string,
   "descricao": string,
-  "preco": Number,
+  "preco": number,
   "urlImagem": string
 }
