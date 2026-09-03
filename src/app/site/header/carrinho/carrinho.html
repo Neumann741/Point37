@@ -6,7 +6,12 @@
                 <h2>Meu Carrinho</h2>
             </div>
     
-            <button class="btn-fechar">×</button>
+            <button
+                class="btn-fechar"
+                type="button"
+                aria-label="Fechar carrinho"
+                (click)="fechar.emit()"
+            >×</button>
         </div>
     
     

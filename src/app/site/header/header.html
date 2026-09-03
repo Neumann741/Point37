@@ -35,7 +35,7 @@
       </button>
 
       @if (statusCarrinho()) {
-        <app-carrinho></app-carrinho>
+        <app-carrinho (fechar)="fechaCarrinho()"></app-carrinho>
       }
     </div>
   </div>

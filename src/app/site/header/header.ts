@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { Carrinho } from './carrinho/carrinho';
 
 
@@ -14,6 +14,10 @@ export class Header {
 
    alteraCarrinho() {
        this.statusCarrinho.update(status => !status);
+   }
+
+   fechaCarrinho() {
+       this.statusCarrinho.set(false);
    }
 
 }

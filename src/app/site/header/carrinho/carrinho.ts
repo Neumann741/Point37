@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, output } from '@angular/core';
 
 @Component({
   imports: [],
@@ -7,7 +7,5 @@ import { Component, inject } from '@angular/core';
   templateUrl: './carrinho.html',
 })
 export class Carrinho {
-
-
-
+  fechar = output<void>();
 }
