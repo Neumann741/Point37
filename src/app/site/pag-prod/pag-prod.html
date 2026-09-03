@@ -1,1 +1,32 @@
-<p>pag-prod works!</p>
+<main class="conteudo">
+    <section class="prod-pag">
+        <p class="pag-prod-sec">Seleção premium</p>
+
+        <h1>Destilados para bons momentos</h1>
+
+        <p class="descricao-prod">
+            Curadoria de whislies, gins, runs e bebidas especiais
+            para celebrar, presentear ou apreciar
+        </p>
+
+        <div class="card-produto">
+            <span class="categoria-prod">
+                {{produto.categoria}}
+            </span>
+
+            <h2>{{produto.nome}}</h2>
+
+
+            <p class="detalhes-prod">
+                {{produto.volume}} . {{produto.teor}}
+            </p>
+
+            <div class="prod-footer">
+                <strong>
+                    {{produto.preco | currency:'BRL'}}
+                </strong>
+
+            </div>
+        </div>
+    </section>
+</main>
