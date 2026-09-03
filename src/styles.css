@@ -4,4 +4,9 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Courier New', monospace;
-  }
+}
+
+/* Impede a página de rolar enquanto o painel do carrinho está aberto. */
+body:has(app-carrinho) {
+    overflow: hidden;
+}
