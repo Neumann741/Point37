@@ -1,37 +1,26 @@
-<main class="conteudo">
-    <section class="prod-pag">
-        <p class="pag-prod-sec">Seleção premium</p>
 
-        <h1>Destilados para bons momentos</h1>
+@if (consumoService.postsDetails.isLoading()) {
+    <p>Carregando...</p>
+} @else if(consumoService.postsDetails.error()) {
+    <p>Deu erro</p>
+}
+@else if(consumoService.postsDetails.hasValue()) {
 
-        <p class="descricao-prod">
-            Curadoria de whiskeys, gins, runs e bebidas especiais
-            para celebrar, presentear ou apreciar
-        </p>
-     <div class="grid-prod">
-        @for (item of produtos; track $index) {
-        <article class="produto-card", let produto of produtos>
-        <div class="card-produto-cont">
-            <span class="categoria-prod">
-                {{item.categoria}}
-            </span>
+<div class="produtos">
+    @for (post of consumoService.postsDetails.value(); track post.id) {
+        <div class="card-produto">
+            <div class="imagem-produto">
+                <img [src]="post.urlImagem" [alt]="post.nome" width="200" height="200">
+            </div> 
+            <div class="info-produto">
 
-            <h2>{{item.nome}}</h2>
+                <h1>{{post.nome}}</h1>
 
+                <p class="descricao">{{post.descricao}}</p>
 
-            <p class="detalhes-prod">
-               {{item.volume}} . {{item.teor}}
-            </p>
-
-            <div class="prod-footer">
-                <strong>
-                   R$ {{item.preco}}
-                </strong>
-
-                
-            </div>
+                <p class="preco">R${{post.preco}}</p>
+            </div>           
         </div>
-    </article>}
-        </div>
-    </section>
-</main>
+    }
+</div>
+}

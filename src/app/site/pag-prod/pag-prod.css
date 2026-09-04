@@ -1,134 +1,111 @@
-.conteudo {
-  min-height: 100vh;
-  color: #202020;
-  background-color: #f3eee5;
+.produtos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 25px;
+    padding: 30px;
 }
 
-.prod-pag {
-  width: min(1180px, calc(100% - 48px));
-  margin: 0 auto;
-  padding: clamp(5rem, 10vw, 9rem) 0;
+.card-produto {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+
+    transition: 0.2s;
 }
 
-.pag-prod-sec {
-  margin-bottom: 1rem;
-  color: #843434;
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.8rem;
-  font-weight: 800;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+.card-produto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
 }
 
-.prod-pag h1 {
-  max-width: 850px;
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  font-size: clamp(2.8rem, 7vw, 6.5rem);
-  font-weight: 800;
-  line-height: 0.98;
+.imagem-produto {
+    width: 100%;
+    height: 220px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f5f7fa;
 }
 
-.descricao-prod {
-  max-width: 520px;
-  margin-top: 1.5rem;
-  color: #4d4540;
-  font-family: 'Poppins', sans-serif;
-  font-size: clamp(1rem, 1.5vw, 1.2rem);
-  line-height: 1.7;
+.imagem-produto img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 15px;
 }
 
-.grid-prod {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.25rem;
-  margin-top: clamp(3rem, 7vw, 6rem);
+.info-produto {
+    padding: 20px;
 }
 
-.produto-card {
-  display: flex;
-  flex-direction: column;
-  min-height: 320px;
-  overflow: hidden;
-  border: 1px solid rgb(32 32 32 / 10%);
-  border-radius: 28px;
-  background-color: #fffdf9;
-  box-shadow: 0 12px 30px rgb(58 36 20 / 8%);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+.info-produto h2 {
+    margin: 0 0 10px;
+
+    font-size: 20px;
+    color: #2f4f80;
 }
 
-.produto-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgb(58 36 20 / 15%);
+.descricao {
+    color: #666;
+    font-size: 14px;
+
+    height: 42px;
+    overflow: hidden;
 }
 
-.card-produto-cont {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 2rem;
+.preco {
+    margin: 15px 0;
+
+    font-size: 22px;
+    font-weight: bold;
+
+    color: #2f4f80;
 }
 
-.categoria-prod {
-  margin-bottom: auto;
-  color: #843434;
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.75rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+.btn-comprar {
+    width: 100%;
+    padding: 12px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #4e84c4;
+    color: white;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: 0.2s;
 }
 
-.card-produto-cont h2 {
-  margin: 2.5rem 0 0;
-  font-family: 'Poppins', sans-serif;
-  font-size: clamp(1.7rem, 3vw, 2.5rem);
-  font-weight: 800;
-  line-height: 1.1;
+.btn-comprar:hover {
+    background: #2f4f80;
 }
 
-.detalhes-prod {
-  margin: 0.75rem 0 0;
-  color: #70665f;
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.95rem;
-  line-height: 1.5;
+.btn-recarregar {
+    margin: 20px 30px;
+    padding: 10px 20px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #4e84c4;
+    color: white;
+
+    font-weight: bold;
+    cursor: pointer;
 }
 
-.prod-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-top: 1.5rem;
-  padding-top: 1.25rem;
-  border-top: 1px solid rgb(32 32 32 / 10%);
+.mensagem {
+    text-align: center;
+    font-size: 18px;
 }
 
-.prod-footer strong {
-  color: #202020;
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.3rem;
-  font-weight: 800;
-}
-
-@media (max-width: 900px) {
-  .grid-prod {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .prod-pag {
-    width: min(100% - 32px, 1180px);
-  }
-
-  .grid-prod {
-    grid-template-columns: 1fr;
-  }
-
-  .produto-card {
-    min-height: 280px;
-  }
+.erro {
+    color: red;
 }
