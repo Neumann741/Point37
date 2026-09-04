@@ -4,11 +4,11 @@ import { Header } from "./site/header/header";
 import { MainPage } from './site/main-page/main-page';
 import { Footer } from "./site/footer/footer";
 import { PagProd } from "./site/pag-prod/pag-prod";
-
+import { Carrossel } from './site/carrossel/carrossel';
 
 
 @Component({
-  imports: [RouterOutlet, Header, MainPage, PagProd, Footer],
+  imports: [RouterOutlet, Header, Carrossel, MainPage, PagProd, Footer],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',
