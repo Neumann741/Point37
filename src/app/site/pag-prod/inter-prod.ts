@@ -1,9 +1,7 @@
 export interface InterProd {
-    nome: string;
-    categoria: string;
-    volume: number|string;
-    teor: number|string;
-    preco: number;
-    
-   
+  "id": 0,
+  "nome": string,
+  "descricao": string,
+  "preco": Number,
+  "urlImagem": string
 }
