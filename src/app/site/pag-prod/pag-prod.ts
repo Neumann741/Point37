@@ -16,9 +16,6 @@ export class PagProd {
 
   protected readonly consumoService = inject(PagAdmService);
 
-  protected recarregarPosts() {
-    this.consumoService.postsDetails.reload();
-  }
 
 
 
