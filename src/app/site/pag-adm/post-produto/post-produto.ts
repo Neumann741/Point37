@@ -1,7 +1,7 @@
 import { Component, inject, signal } from '@angular/core';
 import { PagAdmService } from '../pag-adm-service';
 import { Posts } from './posts';
-import { form, FormField } from '@angular/forms/signals';
+import { form, FormField, minLength, required } from '@angular/forms/signals';
 
 @Component({
   imports: [FormField],
@@ -21,7 +21,18 @@ export class PostProduto {
     "urlImagem": ''
   })
 
-  protected readonly postForm = form(this.postModel);
+  protected readonly postForm = form(this.postModel, (s) => {
+
+    required(s.nome , {message:'O nome é obrigatório'});
+    minLength(s.nome,3, {message: 'O nome deve possuir pelo menos 3 carcteres'});
+
+    required(s.descricao , {message:'A descrição é obrigatória'});
+
+    required(s.preco, {message:'O preço é obrigatório'});
+
+    required(s.urlImagem, {message:'A url é obrigatória'});
+
+  } );
 
   protected cadastrarProduto(event: SubmitEvent) {
 
