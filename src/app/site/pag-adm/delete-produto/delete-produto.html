@@ -1,0 +1,29 @@
+<h1>Edite os Produtos</h1>
+@if (consumoService.postsDetails.isLoading()) {
+    <p>Carregando...</p>
+} @else if(consumoService.postsDetails.error()) {
+    <p>Deu erro</p>
+}
+@else if(consumoService.postsDetails.hasValue()) {
+
+<div class="produtos">
+    @for (post of consumoService.postsDetails.value(); track post.id) {
+        <div class="card-produto">
+            <div class="imagem-produto">
+                <img [src]="post.urlImagem" [alt]="post.nome" width="200" height="200">
+            </div> 
+            <div class="info-produto">
+
+                <h1>{{post.nome}}</h1>
+
+                <p class="descricao">{{post.descricao}}</p>
+
+                <p class="preco">R${{post.preco}}</p>
+
+                <button (click)="deletarPost(post.id)">Deletar Produto</button>
+
+            </div>           
+        </div>
+    }
+</div>
+}

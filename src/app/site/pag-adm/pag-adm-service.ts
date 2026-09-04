@@ -15,6 +15,9 @@ export class PagAdmService {
         return this.httpClient.post<PostResponse>(this.apiUrl, postCadastrado);
     }
 
+    deletarPost(id: number) {
+        return this.httpClient.delete(this.apiUrl + '/' + id);
+    }
 
     readonly postsDetails = httpResource<InterProd[]>(
         () => this.apiUrl,
