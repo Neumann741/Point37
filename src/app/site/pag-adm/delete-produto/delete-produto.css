@@ -15,11 +15,6 @@
     transition: 0.2s;
 }
 
-.card-produto:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
-}
-
 .imagem-produto {
     width: 100%;
     height: 220px;
@@ -87,20 +82,6 @@
     background: #2f4f80;
 }
 
-.btn-recarregar {
-    margin: 20px 30px;
-    padding: 10px 20px;
-
-    border: none;
-    border-radius: 8px;
-
-    background: #4e84c4;
-    color: white;
-
-    font-weight: bold;
-    cursor: pointer;
-}
-
 .mensagem {
     text-align: center;
     font-size: 18px;
@@ -108,4 +89,18 @@
 
 .erro {
     color: red;
+}
+
+.btn-excluir {
+    color: white;
+    background-color: red;
+    text-decoration: none;
+    border: 1px solid red;
+    padding: 7px;
+    border-radius: 2px;
+}
+
+.btn-excluir:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
 }
