@@ -6,6 +6,7 @@ import { Footer } from "./site/footer/footer";
 import { PagProd } from "./site/pag-prod/pag-prod";
 
 
+
 @Component({
   imports: [RouterOutlet, Header, MainPage, PagProd, Footer],
   selector: 'app-root',
