@@ -109,3 +109,47 @@
 .erro {
     color: red;
 }
+
+
+.imagem-produto {
+  padding: 0;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.imagem-produto img {
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.imagem-produto:hover img {
+  transform: scale(1.1);
+}
+
+.modal-produto {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(0,0,0,0.65);
+}
+
+.modal-produto-cont {
+  position: relative;
+  padding: 28px;
+  max-width: 1000px;
+  border-radius: 16px;
+  background: #fff;
+}
+
+.modal-produto-cont img {
+  width:100%;
+  max-height: 600px;
+  object-fit: contain;
+}
+
+
+

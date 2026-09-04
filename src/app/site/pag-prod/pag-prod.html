@@ -9,9 +9,15 @@
 <div class="produtos">
     @for (post of consumoService.postsDetails.value(); track post.id) {
         <div class="card-produto">
-            <div class="imagem-produto">
+
+            <button class="detalhes-produto"
+            type="button"
+            (click)="abrirProduto(post)"
+            [attr.aria-label]="'Ver detalhes de' + post.nome"
+            >
+            
                 <img [src]="post.urlImagem" [alt]="post.nome" width="200" height="200">
-            </div> 
+         </button>
             <div class="info-produto">
 
                 <h1>{{post.nome}}</h1>
@@ -23,4 +29,18 @@
         </div>
     }
 </div>
+}
+
+@if (produtoSelecionado(); as produto){
+
+    <div class="modal-produto" (click)="fecharProduto()">
+        <article class="modal-produto-cont" (click)="$event.stopPropagation">
+            <button class="modal-botao-fechar"type="button" (click)="fecharProduto()">×</button>
+
+            <img [src]="produto.urlImagem" [alt]="produto.nome">
+            <h2>{{produto.nome}}</h2>
+            <p>{{produto.descricao}}</p>
+            <strong>R${{produto.preco}}</strong>
+        </article>
+    </div>
 }

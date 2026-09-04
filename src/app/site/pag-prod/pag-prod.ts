@@ -16,7 +16,15 @@ export class PagProd {
 
   protected readonly consumoService = inject(PagAdmService);
 
+  produtoSelecionado = signal<any>(null);
 
+  abrirProduto(produto: any){
+    this.produtoSelecionado.set(produto);
+  }
+
+  fecharProduto(){
+    this.produtoSelecionado.set(null)
+  }
 
 
 }
