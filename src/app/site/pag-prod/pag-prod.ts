@@ -1,5 +1,4 @@
 import { Component, inject, signal } from '@angular/core';
-import { InterProd } from './inter-prod';
 import { Header } from '../header/header';
 import { MainPage } from '../main-page/main-page';
 import { Footer } from '../footer/footer';
@@ -20,10 +19,12 @@ export class PagProd {
 
   abrirProduto(produto: any){
     this.produtoSelecionado.set(produto);
+    document.body.style.overflow = 'hidden';
   }
 
   fecharProduto(){
-    this.produtoSelecionado.set(null)
+    this.produtoSelecionado.set(null);
+    document.body.style.overflow = '';
   }
 
 
