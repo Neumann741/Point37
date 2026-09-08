@@ -7,7 +7,7 @@
 
 .card-produto {
     background: white;
-    border-radius: 15px;
+    border-radius: 20px;
     overflow: hidden;
 
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
@@ -21,7 +21,7 @@
 }
 
 .imagem-produto {
-    width: 100%;
+    width: 170%;
     height: 220px;
 
     display: flex;
@@ -35,11 +35,11 @@
     width: 100%;
     height: 100%;
     object-fit: contain;
-    padding: 15px;
+    padding: 10px;
 }
 
 .info-produto {
-    padding: 20px;
+    padding: 25px;
 }
 
 .info-produto h2 {
@@ -124,7 +124,7 @@
 }
 
 .imagem-produto:hover img {
-  transform: scale(1.1);
+  transform: scale(0.5);
 }
 
 .modal-produto {
@@ -151,5 +151,12 @@
   object-fit: contain;
 }
 
-
-
+.modal-botao-fechar{
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+   font-size: 2rem;
+ 
+ line-height: 1;
+  cursor: pointer;
+}
