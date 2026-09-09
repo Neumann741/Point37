@@ -1,15 +1,10 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Header } from "./site/header/header";
-import { MainPage } from './site/main-page/main-page';
-import { Footer } from "./site/footer/footer";
-import { PagProd } from "./site/pag-prod/pag-prod";
-import { Carrossel } from './site/carrossel/carrossel';
 
 
 
 @Component({
-  imports: [RouterOutlet, Header, Carrossel, MainPage, PagProd, Footer],
+  imports: [RouterOutlet],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',

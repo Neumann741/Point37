@@ -104,8 +104,8 @@
   align-items: center;
   justify-content: center;
   gap: 0.55rem;
-  min-height: 46px;
-  padding: 0.65rem 1.1rem;
+  min-height: 26px;
+  padding: 12px;
   color: #fff;
   background: rgba(255, 255, 255, 0.16);
   border: 1px solid rgba(255, 255, 255, 0.55);
@@ -114,7 +114,7 @@
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   font-family: 'Poppins', Arial, Helvetica, sans-serif;
-  font-size: 0.95rem;
+  font-size: 0.55rem;
   font-weight: 700;
   cursor: pointer;
   transition:
@@ -137,8 +137,8 @@
 }
 
 .cart-button__icon {
-  width: 20px;
-  height: 20px;
+  width: 26px;
+  height: 26px;
   fill: none;
   stroke: currentColor;
   stroke-width: 1.8;
