@@ -1,26 +1,36 @@
 <form (submit)="cadastrarProduto($event)">
-
-    <input type="text" [formField]="postForm.nome" placeholder="Nome">
+    <div class="campo-formulario">
+        <label for="nome">Nome do produto</label>
+        <input id="nome" type="text" [formField]="postForm.nome" placeholder="Ex.: Café especial">
     @if (postForm.nome().touched() && postForm.nome().invalid()) {
-    @for (erro of postForm.nome().errors(); track erro.kind) {
-    <span>{{erro.message}}</span>}}
+        @for (erro of postForm.nome().errors(); track erro.kind) { <span class="erro">{{erro.message}}</span> }
+    }
+    </div>
 
-    <input type="text" [formField]="postForm.descricao" placeholder="Descrição">
+    <div class="campo-formulario campo-formulario--largo">
+        <label for="descricao">Descrição</label>
+        <input id="descricao" type="text" [formField]="postForm.descricao" placeholder="Descreva o produto de forma breve">
     @if (postForm.descricao().touched() && postForm.descricao().invalid()) {
-    @for (erro of postForm.descricao().errors(); track erro.kind) {
-    <span>{{erro.message}}</span>}}
+        @for (erro of postForm.descricao().errors(); track erro.kind) { <span class="erro">{{erro.message}}</span> }
+    }
+    </div>
 
-    <input type="number" inputmode="numeric" [formField]="postForm.preco" placeholder="Preço">
+    <div class="campo-formulario">
+        <label for="preco">Preço</label>
+        <div class="campo-preco"><span>R$</span><input id="preco" type="number" inputmode="numeric" [formField]="postForm.preco" placeholder="0,00"></div>
     @if (postForm.preco().touched() && postForm.preco().invalid()) {
-    @for (erro of postForm.preco().errors(); track erro.kind) {
-    <span>{{erro.message}}</span>}}
+        @for (erro of postForm.preco().errors(); track erro.kind) { <span class="erro">{{erro.message}}</span> }
+    }
+    </div>
 
-
-    <input type="text" [formField]="postForm.urlImagem" placeholder="Url">
+    <div class="campo-formulario campo-formulario--largo">
+        <label for="urlImagem">URL da imagem</label>
+        <input id="urlImagem" type="text" [formField]="postForm.urlImagem" placeholder="https://exemplo.com/imagem.jpg">
     @if (postForm.urlImagem().touched() && postForm.urlImagem().invalid()) {
-    @for (erro of postForm.urlImagem().errors(); track erro.kind) {
-    <span>{{erro.message}}</span>}}
+        @for (erro of postForm.urlImagem().errors(); track erro.kind) { <span class="erro">{{erro.message}}</span> }
+    }
+    </div>
 
-    <button [disabled]="postForm().invalid()">Listar Produto</button>
+    <button [disabled]="postForm().invalid()">Cadastrar produto <span aria-hidden="true">→</span></button>
 
 </form>

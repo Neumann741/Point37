@@ -1,8 +1,7 @@
-<h1>Edite os Produtos</h1>
 @if (consumoService.postsDetails.isLoading()) {
-    <p>Carregando...</p>
+    <p class="estado-lista">Carregando produtos do catálogo...</p>
 } @else if(consumoService.postsDetails.error()) {
-    <p>Deu erro</p>
+    <p class="estado-lista estado-lista--erro">Não foi possível carregar os produtos. Tente novamente.</p>
 }
 @else if(consumoService.postsDetails.hasValue()) {
 
@@ -18,9 +17,9 @@
 
                 <p class="descricao">{{post.descricao}}</p>
 
-                <p class="preco">R${{post.preco}}</p>
+                <p class="preco">R$ {{post.preco}}</p>
 
-                <button class="btn-excluir" (click)="deletarPost(post.id)">Deletar Produto</button>
+                <button class="btn-excluir" (click)="deletarPost(post.id)">Excluir produto</button>
 
             </div>           
         </div>
