@@ -7,6 +7,7 @@ import { PagProd } from "./site/pag-prod/pag-prod";
 import { Carrossel } from './site/carrossel/carrossel';
 
 
+
 @Component({
   imports: [RouterOutlet, Header, Carrossel, MainPage, PagProd, Footer],
   selector: 'app-root',

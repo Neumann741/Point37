@@ -1,10 +1,26 @@
 <form (submit)="cadastrarProduto($event)">
 
     <input type="text" [formField]="postForm.nome" placeholder="Nome">
-    <input type="text" [formField]="postForm.descricao" placeholder="Descrição">
-    <input type="number" inputmode="numeric" [formField]="postForm.preco" placeholder="Preço">
-    <input type="text" [formField]="postForm.urlImagem" placeholder="Url">
+    @if (postForm.nome().touched() && postForm.nome().invalid()) {
+    @for (erro of postForm.nome().errors(); track erro.kind) {
+    <span>{{erro.message}}</span>}}
 
-    <button>Post</button>
+    <input type="text" [formField]="postForm.descricao" placeholder="Descrição">
+    @if (postForm.descricao().touched() && postForm.descricao().invalid()) {
+    @for (erro of postForm.descricao().errors(); track erro.kind) {
+    <span>{{erro.message}}</span>}}
+
+    <input type="number" inputmode="numeric" [formField]="postForm.preco" placeholder="Preço">
+    @if (postForm.preco().touched() && postForm.preco().invalid()) {
+    @for (erro of postForm.preco().errors(); track erro.kind) {
+    <span>{{erro.message}}</span>}}
+
+
+    <input type="text" [formField]="postForm.urlImagem" placeholder="Url">
+    @if (postForm.urlImagem().touched() && postForm.urlImagem().invalid()) {
+    @for (erro of postForm.urlImagem().errors(); track erro.kind) {
+    <span>{{erro.message}}</span>}}
+
+    <button [disabled]="postForm().invalid()">Listar Produto</button>
 
 </form>

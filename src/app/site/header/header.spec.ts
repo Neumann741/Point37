@@ -18,4 +18,17 @@ describe('Header', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should open and close the cart', () => {
+    const cartButton: HTMLButtonElement = fixture.nativeElement.querySelector('.cart-button');
+
+    cartButton.click();
+    fixture.detectChanges();
+    expect(fixture.nativeElement.querySelector('app-carrinho')).toBeTruthy();
+
+    const closeButton: HTMLButtonElement = fixture.nativeElement.querySelector('.btn-fechar');
+    closeButton.click();
+    fixture.detectChanges();
+    expect(fixture.nativeElement.querySelector('app-carrinho')).toBeNull();
+  });
 });
