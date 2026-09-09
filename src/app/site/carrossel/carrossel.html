@@ -1,8 +1,8 @@
 
 <section class="header">
-  <input class="carousel-state" type="radio" name="hero-slide" id="slide-green" checked>
-  <input class="carousel-state" type="radio" name="hero-slide" id="slide-blue">
-  <input class="carousel-state" type="radio" name="hero-slide" id="slide-red">
+  <input class="carousel-state" type="radio" name="hero-slide" id="slide-green" [checked]="slideAtivo() === 'green'" (change)="selecionarSlide('green')">
+  <input class="carousel-state" type="radio" name="hero-slide" id="slide-blue" [checked]="slideAtivo() === 'blue'" (change)="selecionarSlide('blue')">
+  <input class="carousel-state" type="radio" name="hero-slide" id="slide-red" [checked]="slideAtivo() === 'red'" (change)="selecionarSlide('red')">
 
   
 
