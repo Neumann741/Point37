@@ -18,6 +18,52 @@ app-main-page {
     display: block;
 }
 
+/* Mantém o cabeçalho na mesma cor do slide atualmente exibido no carrossel. */
+app-header .topbar {
+    isolation: isolate;
+    overflow: hidden;
+    transition: background-color 0.7s ease;
+}
+
+app-header .topbar::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -110px;
+    z-index: 0;
+    width: min(50vw, 520px);
+    aspect-ratio: 1;
+    background: rgba(255, 255, 255, 0.24);
+    border-radius: 50%;
+    filter: blur(65px);
+    opacity: 0.8;
+    pointer-events: none;
+    transform: translateX(-50%);
+    animation: brilho-header 7s ease-in-out infinite alternate;
+}
+
+app-header .topbar > * {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes brilho-header {
+    from { scale: 0.9; opacity: 0.58; }
+    to { scale: 1.08; opacity: 0.88; }
+}
+
+app-root:has(app-carrossel #slide-green:checked) app-header .topbar {
+    background-color: #5ba25b;
+}
+
+app-root:has(app-carrossel #slide-blue:checked) app-header .topbar {
+    background-color: #5b95a2;
+}
+
+app-root:has(app-carrossel #slide-red:checked) app-header .topbar {
+    background-color: #843434;
+}
+
 /* Impede a página de rolar enquanto o painel do carrinho está aberto. */
 body:has(app-carrinho) {
     overflow: hidden;
