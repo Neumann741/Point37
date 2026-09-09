@@ -1,2 +1,24 @@
-<app-post-produto></app-post-produto>
-<app-delete-produto></app-delete-produto>
+<main class="painel-admin">
+
+    <section class="painel-admin__secao painel-admin__secao--cadastro" aria-labelledby="titulo-cadastro">
+        <div class="painel-admin__titulo-secao">
+            <span class="painel-admin__icone" aria-hidden="true">+</span>
+            <div>
+                <p>Cadastro</p>
+                <h2 id="titulo-cadastro">Adicionar produto</h2>
+            </div>
+        </div>
+        <app-post-produto></app-post-produto>
+    </section>
+
+    <section class="painel-admin__secao painel-admin__secao--catalogo" aria-labelledby="titulo-catalogo">
+        <div class="painel-admin__titulo-secao">
+            <span class="painel-admin__icone" aria-hidden="true">□</span>
+            <div>
+                <p>Catálogo</p>
+                <h2 id="titulo-catalogo">Produtos cadastrados</h2>
+            </div>
+        </div>
+        <app-delete-produto></app-delete-produto>
+    </section>
+</main>

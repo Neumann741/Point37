@@ -1,0 +1,70 @@
+.painel-admin {
+    min-height: 100vh;
+    padding: 32px clamp(20px, 5vw, 64px) 56px;
+    background: #f7f7f7;
+    color: #252525;
+}
+
+.painel-admin__cabecalho {
+    max-width: 1200px;
+    margin: 0 auto 32px;
+    padding: 24px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    color: #fff;
+    background: #27394b;
+    border-left: 5px solid #4e82b7;
+}
+
+.painel-admin h1,
+.painel-admin h2,
+.painel-admin p { margin: 0; }
+
+.painel-admin h1 { font-size: clamp(1.7rem, 3vw, 2.35rem); letter-spacing: -.04em; }
+
+.painel-admin__sobretitulo,
+.painel-admin__titulo-secao > div > p {
+    margin-bottom: 6px !important;
+    color: #5485b6;
+    font-size: .75rem;
+    font-weight: 800;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+.painel-admin__descricao { margin-top: 8px !important; color: #d8e0e8; }
+
+.painel-admin__status {
+    padding: 8px 11px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    flex: 0 0 auto;
+    color: #e1e9f0;
+    font-size: .9rem;
+    font-weight: 700;
+    background: rgba(255, 255, 255, .08);
+    border: 1px solid rgba(255, 255, 255, .2);
+}
+
+.painel-admin__status-indicador { width: 7px; height: 7px; background: #76b990; }
+
+.painel-admin__secao {
+    max-width: 1200px;
+    margin: 0 auto 28px;
+    padding: clamp(22px, 3vw, 30px);
+    background: #fff;
+    border: 1px solid #dcdcdc;
+}
+
+.painel-admin__titulo-secao { display: flex; align-items: center; gap: 14px; margin-bottom: 26px; }
+.painel-admin__titulo-secao h2 { font-size: 1.35rem; letter-spacing: -.025em; }
+.painel-admin__icone { width: 38px; height: 38px; display: grid; place-items: center; color: #3e6f9f; font-size: 1.25rem; font-weight: 500; background: #edf3f8; border: 1px solid #d5e0ea; }
+
+@media (max-width: 620px) {
+    .painel-admin { padding-top: 24px; }
+    .painel-admin__cabecalho { padding: 26px 24px; align-items: flex-start; flex-direction: column; }
+    .painel-admin__secao { padding: 22px 18px; }
+}
