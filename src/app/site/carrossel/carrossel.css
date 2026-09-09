@@ -1,8 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700;800;900&display=swap');
-
 @font-face {
-  font-family: 'Monicho';
-  src: url('/assets/fonts/monicho-personal-use.otf') format('opentype');
+  font-family: "Monicho";
+  src: url("/assets/fonts/monicho-personal-use.otf") format("opentype");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -12,17 +10,17 @@
   position: relative;
   isolation: isolate;
   width: 100%;
-  min-height: 100vh;
+  min-height: calc(100vh - 90px);
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
   background-color: #5ba25b;
   transition: background-color 0.7s ease;
-  overflow: hidden;
 }
 
 .header::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 54%;
   left: 50%;
@@ -38,20 +36,16 @@
   transition: background-color 0.7s ease;
 }
 
-.header:has(#slide-blue:checked)::before {
-  background-color: rgba(255, 255, 255, 0.31);
+.header:has(#slide-blue:checked) {
+  background-color: #5b95a2;
 }
 
-@keyframes ambient-light {
-  from {
-    opacity: 0.72;
-    scale: 0.92;
-  }
+.header:has(#slide-red:checked) {
+  background-color: #843434;
+}
 
-  to {
-    opacity: 1;
-    scale: 1.06;
-  }
+.header:has(#slide-blue:checked)::before {
+  background-color: rgba(255, 255, 255, 0.31);
 }
 
 .carousel-state {
@@ -62,53 +56,26 @@
   pointer-events: none;
 }
 
-.header:has(#slide-blue:checked) {
-  background-color: #5b95a2;
-}
-
-.header:has(#slide-red:checked) {
-  background-color: #843434;
-}
-
-#slide-blue:checked ~ .font-test--bombay,
-#slide-blue:checked ~ .bombay-layer {
-  animation: hero-enter-right 0.7s ease both;
-}
-
-#slide-green:checked ~ .font-test--tanqueray,
-#slide-green:checked ~ .tanqueray-layer {
-  animation: hero-enter-left 0.7s ease both;
-}
-
-#slide-red:checked ~ .font-test--beefeater,
-#slide-red:checked ~ .beefeater-layer {
-  animation: hero-enter-right 0.7s ease both;
-}
-
+/* Visibilidade de cada produto */
 .font-test--bombay,
-.font-test--beefeater {
+.font-test--beefeater,
+.header .bombay-layer,
+.header .beefeater-layer {
   display: none;
 }
 
 .header .bombay-layer,
 .header .beefeater-layer {
-  display: none;
   height: 90vh;
   max-height: 90vh;
 }
 
-#slide-blue:checked ~ .font-test--tanqueray {
-  display: none;
-}
-
-#slide-blue:checked ~ .font-test--bombay {
-  display: block;
-}
-
+#slide-blue:checked ~ .font-test--tanqueray,
 #slide-blue:checked ~ .tanqueray-layer {
   display: none;
 }
 
+#slide-blue:checked ~ .font-test--bombay,
 #slide-blue:checked ~ .bombay-layer {
   display: block;
 }
@@ -123,6 +90,37 @@
 #slide-red:checked ~ .font-test--beefeater,
 #slide-red:checked ~ .beefeater-layer {
   display: block;
+}
+
+/* Animações dos produtos */
+#slide-green:checked ~ .font-test--tanqueray,
+#slide-green:checked ~ .tanqueray-layer {
+  animation: hero-enter-left 0.7s ease both;
+}
+
+#slide-blue:checked ~ .font-test--bombay,
+#slide-blue:checked ~ .bombay-layer,
+#slide-red:checked ~ .font-test--beefeater,
+#slide-red:checked ~ .beefeater-layer {
+  animation: hero-enter-right 0.7s ease both;
+}
+
+#slide-green:checked ~ .font-test--tanqueray,
+#slide-blue:checked ~ .font-test--bombay,
+#slide-red:checked ~ .font-test--beefeater {
+  animation: hero-text-fade 1.1s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes ambient-light {
+  from {
+    opacity: 0.72;
+    scale: 0.92;
+  }
+
+  to {
+    opacity: 1;
+    scale: 1.06;
+  }
 }
 
 @keyframes hero-enter-right {
@@ -186,7 +184,6 @@
   width: 64px;
   height: 64px;
   padding: 0;
-  transform: translateY(-50%);
   color: #fff;
   background: linear-gradient(
     135deg,
@@ -199,12 +196,8 @@
     0 8px 24px rgba(20, 70, 35, 0.2),
     inset 0 1px 0 rgba(255, 255, 255, 0.45);
   backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  transform: translateY(-50%);
   cursor: pointer;
-  transition:
-    background-color 0.2s ease,
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
 }
 
 .arrow-from-blue,
@@ -228,11 +221,7 @@
 }
 
 .hero-arrow:hover {
-  color: #fff;
   background-color: rgba(255, 255, 255, 0.3);
-  box-shadow:
-    0 10px 30px rgba(20, 70, 35, 0.28),
-    inset 0 1px 0 rgba(255, 255, 255, 0.65);
   transform: translateY(-50%) scale(1.06);
 }
 
@@ -244,36 +233,26 @@
   right: clamp(1.25rem, 4vw, 5rem);
 }
 
-@media (max-width: 600px) {
-  .hero-arrow {
-    width: 48px;
-    height: 48px;
-  }
-
-  .hero-arrow span {
-    font-size: 1.5rem;
-  }
-}
-
+/* Nome e imagem da bebida */
 .font-test {
   position: absolute;
   top: 37%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  z-index: 1;
   margin: 0;
   color: #fff;
-  font-family: 'Monicho', sans-serif;
+  font-family: "Monicho", sans-serif;
   font-size: clamp(6rem, 16vw, 15rem);
   font-weight: 500;
   line-height: 1;
-  z-index: 1;
+  transform: translate(-50%, -50%);
 }
 
 .header__image {
   position: absolute;
   top: 56%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  z-index: 2;
   display: block;
   width: auto;
   height: 90vh;

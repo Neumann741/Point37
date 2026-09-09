@@ -1,5 +1,4 @@
 .topbar {
-
   position: relative;
   z-index: 10;
   display: grid;
@@ -34,27 +33,25 @@
 
 .main-nav a {
   position: relative;
+  padding: 0.4rem 0;
   color: #fff;
-  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
   font-size: clamp(1rem, 1.5vw, 1.35rem);
   font-weight: 800;
   letter-spacing: 0.04em;
   text-decoration: none;
-  padding: 0.4rem 0;
-  transition:
-    opacity 0.25s ease,
-    transform 0.25s ease;
+  transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
 .main-nav a::after {
-  content: '';
+  content: "";
   position: absolute;
   right: 0;
   bottom: 0;
   left: 0;
   height: 3px;
-  background-color: #fff;
   border-radius: 999px;
+  background-color: #fff;
   transform: scaleX(0);
   transform-origin: center;
   transition: transform 0.3s ease;
@@ -65,13 +62,11 @@
   transform: translateY(-2px);
 }
 
-
 .main-nav a:hover::after {
   transform: scaleX(1);
 }
 
 .cart-space {
-  position: relative;
   justify-self: end;
 }
 
@@ -88,28 +83,17 @@
   border-radius: 999px;
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.14);
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
   font-size: 0.95rem;
   font-weight: 700;
   cursor: pointer;
-  transition:
-    background-color 0.2s ease,
-    border-color 0.2s ease,
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+  transition: 0.2s ease;
 }
 
 .cart-button:hover {
   background: rgba(255, 255, 255, 0.28);
   border-color: rgba(255, 255, 255, 0.85);
-  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.2);
   transform: translateY(-2px);
-}
-
-.cart-button:focus-visible {
-  outline: 3px solid rgba(255, 255, 255, 0.8);
-  outline-offset: 3px;
 }
 
 .cart-button__icon {
