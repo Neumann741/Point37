@@ -9,10 +9,11 @@
 }
 
 .header {
+  --espaco-navegacao: clamp(28px, 3.5vw, 48px);
   position: relative;
   isolation: isolate;
   width: 100%;
-  min-height: 100vh;
+  min-height: calc(100vh + var(--espaco-navegacao));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -257,7 +258,7 @@
 
 .font-test {
   position: absolute;
-  top: 37%;
+  top: calc(37% + var(--espaco-navegacao));
   left: 50%;
   transform: translate(-50%, -50%);
   margin: 0;
@@ -271,7 +272,7 @@
 
 .header__image {
   position: absolute;
-  top: 56%;
+  top: calc(56% + 10px);
   left: 50%;
   transform: translate(-50%, -50%);
   display: block;

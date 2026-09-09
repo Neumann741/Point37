@@ -12,6 +12,19 @@ app-header {
     display: block;
 }
 
+/* O cabeçalho fica sobre o carrossel e usa o próprio fundo do hero. */
+app-layout-publico {
+    position: relative;
+    display: block;
+}
+
+app-layout-publico > app-header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+}
+
 app-main-page {
     position: relative;
     z-index: 0;
@@ -21,35 +34,12 @@ app-main-page {
 /* Mantém o cabeçalho na mesma cor do slide atualmente exibido no carrossel. */
 app-header .topbar {
     isolation: isolate;
-    overflow: hidden;
-    transition: background-color 0.7s ease;
+    overflow: visible;
+    background-color: transparent !important;
 }
 
 app-header .topbar::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    bottom: -110px;
-    z-index: 0;
-    width: min(50vw, 520px);
-    aspect-ratio: 1;
-    background: rgba(255, 255, 255, 0.24);
-    border-radius: 50%;
-    filter: blur(65px);
-    opacity: 0.8;
-    pointer-events: none;
-    transform: translateX(-50%);
-    animation: brilho-header 7s ease-in-out infinite alternate;
-}
-
-app-header .topbar > * {
-    position: relative;
-    z-index: 1;
-}
-
-@keyframes brilho-header {
-    from { scale: 0.9; opacity: 0.58; }
-    to { scale: 1.08; opacity: 0.88; }
+    content: none;
 }
 
 app-root:has(app-carrossel #slide-green:checked) app-header .topbar {
