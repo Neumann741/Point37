@@ -3,7 +3,7 @@
     grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
     gap: 20px;
     padding: 30px;
-    
+    align-items: stretch;
 }
 
 
@@ -12,6 +12,9 @@
     border-radius: 20px;
     overflow: hidden;
     transition: 0.2s;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .card-produto:hover {
@@ -21,13 +24,17 @@
 
 .info-produto {
     padding: 25px;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
 }
 
-.info-produto h2 {
+.info-produto h1 {
     margin: 0 0 10px;
-
     font-size: 20px;
     color: #2f4f80;
+    line-height: 1.2;
+    min-height: 48px;
 }
 
 .descricao {
@@ -39,7 +46,7 @@
 }
 
 .preco {
-    margin: 15px 0;
+    margin: auto 0 0;
 
     font-size: 22px;
     font-weight: bold;
@@ -81,21 +88,35 @@
   cursor: pointer;
 }
 
-/* .produto-img {
-     width: 100%;
+.detalhes-produto {
+  width: 100%;
   height: 310px;
+  padding: 0;
+  border: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   background: #fff;
-} */
+  cursor: pointer;
+}
 
 .produto-img {
-    width: 238px;
-    height:300px;
-  
-    display:flex;
-    object-fit:contain
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.detalhes-produto:hover .produto-img {
+  transform: scale(1.03);
+}
+
+@media (max-width: 560px) {
+  .produtos {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
 }
 

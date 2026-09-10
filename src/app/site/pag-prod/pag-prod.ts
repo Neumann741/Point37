@@ -1,12 +1,9 @@
 import { Component, inject, signal } from '@angular/core';
-import { Header } from '../header/header';
-import { MainPage } from '../main-page/main-page';
-import { Footer } from '../footer/footer';
 import { PagAdmService } from '../pag-adm/pag-adm-service';
 
 
 @Component({
-  imports: [Header, MainPage, Footer],
+  imports: [],
   selector: 'app-pag-prod',
   styleUrl: './pag-prod.css',
   templateUrl: './pag-prod.html',
