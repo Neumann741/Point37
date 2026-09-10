@@ -1,9 +1,10 @@
 import { Component, inject, signal } from '@angular/core';
 import { PagAdmService } from '../pag-adm/pag-adm-service';
+import { Carrossel } from "../carrossel/carrossel";
 
 
 @Component({
-  imports: [],
+  imports: [Carrossel],
   selector: 'app-pag-prod',
   styleUrl: './pag-prod.css',
   templateUrl: './pag-prod.html',
