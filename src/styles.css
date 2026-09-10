@@ -1,9 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Courier New', monospace;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
 }
 
 app-header {
@@ -19,6 +21,11 @@ app-layout-publico {
 }
 
 app-layout-publico > app-header {
+    position: relative;
+}
+
+/* Somente a página inicial possui carrossel atrás do cabeçalho. */
+app-layout-publico:has(app-main-page app-carrossel) > app-header {
     position: absolute;
     top: 0;
     right: 0;
@@ -31,26 +38,26 @@ app-main-page {
     display: block;
 }
 
-/* Mantém o cabeçalho na mesma cor do slide atualmente exibido no carrossel. */
-app-header .topbar {
+/* Mantém o cabeçalho transparente apenas quando houver carrossel. */
+app-layout-publico:has(app-main-page app-carrossel) app-header .topbar {
     isolation: isolate;
     overflow: visible;
     background-color: transparent !important;
 }
 
-app-header .topbar::before {
+app-layout-publico:has(app-main-page app-carrossel) app-header .topbar::before {
     content: none;
 }
 
-app-root:has(app-carrossel #slide-green:checked) app-header .topbar {
+app-root:has(app-carrossel #slide-green:checked) app-layout-publico app-header .topbar {
     background-color: #5ba25b;
 }
 
-app-root:has(app-carrossel #slide-blue:checked) app-header .topbar {
+app-root:has(app-carrossel #slide-blue:checked) app-layout-publico app-header .topbar {
     background-color: #5b95a2;
 }
 
-app-root:has(app-carrossel #slide-red:checked) app-header .topbar {
+app-root:has(app-carrossel #slide-red:checked) app-layout-publico app-header .topbar {
     background-color: #843434;
 }
 
