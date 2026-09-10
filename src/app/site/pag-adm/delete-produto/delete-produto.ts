@@ -29,7 +29,9 @@ export class DeleteProduto {
             alert('Algo deu errado');
         }
     });
+    window.location.reload();
 }
+
 }
 
 
