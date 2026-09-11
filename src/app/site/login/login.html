@@ -11,9 +11,15 @@
       id="email"
       name="email"
       type="email"
-      [(ngModel)]="email"
       required
       placeholder="voce@email.com"
+
+
+  [ngModel]="infoModel().email"
+  (ngModelChange)="infoModel.set({
+    ...infoModel(),
+    email: $event
+  })"
     >
 
     <label for="senha">Senha</label>
@@ -21,15 +27,17 @@
       id="senha"
       name="senha"
       type="password"
-      [(ngModel)]="senha"
       required
       placeholder="Sua senha"
+
+        [ngModel]="infoModel().senha"
+  (ngModelChange)="infoModel.set({
+    ...infoModel(),
+    senha: $event
+  })"
     >
 
     <button type="submit">Entrar</button>
 
-    @if (mensagem()) {
-      <p class="login-card__mensagem">{{ mensagem() }}</p>
-    }
   </form>
 </main>
