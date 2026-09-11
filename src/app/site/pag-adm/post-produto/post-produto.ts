@@ -59,7 +59,8 @@ export class PostProduto {
         alert('Algo deu errado');
       }
     })
-
+    
+    window.location.reload();
 
   }
 }

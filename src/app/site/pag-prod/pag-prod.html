@@ -7,31 +7,49 @@
     <p>Deu erro</p>
 }
 @else if(consumoService.postsDetails.hasValue()) {
-
+<app-carrossel></app-carrossel>
 <div class="produtos">
     @for (post of consumoService.postsDetails.value(); track post.id) {
+
         <div class="card-produto">
 
-            <button class="detalhes-produto"
-            type="button"
-            (click)="abrirProduto(post)"
-            [attr.aria-label]="'Ver detalhes de' + post.nome"
+            <button
+                class="detalhes-produto"
+                type="button"
+                (click)="abrirProduto(post)"
+                [attr.aria-label]="'Ver detalhes de ' + post.nome"
             >
-            
-                <img class="produto-img" [src]="post.urlImagem" [alt]="post.nome" >
-         </button>
+                <div class="imagem-container">
+                    <img
+                        class="produto-img"
+                        [src]="post.urlImagem"
+                        [alt]="post.nome"
+                    >
+                </div>
+            </button>
+
             <div class="info-produto">
 
-                <h1>{{post.nome}}</h1>
+                <p class="nome-produto">
+                    {{ post.nome }}
+                </p>
 
-                <p class="descricao">{{post.descricao}}</p>
+                <p class="preco">
+                    R${{ post.preco }}
+                </p>
 
-                <p class="preco">R${{post.preco}}</p>
-            </div>           
+                <button class="botao-comprar">
+                    COMPRAR
+                </button>
+
+            </div>
+
         </div>
+
     }
 </div>
-}
+    }
+
 
 @if (produtoSelecionado(); as produto){
 

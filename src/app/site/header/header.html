@@ -11,6 +11,32 @@
     </nav>
 
     <div class="cart-space">
+      <details class="search-control">
+        <summary
+          class="search-button"
+          aria-label="Abrir pesquisa"
+          title="Pesquisar"
+        >
+          <svg
+            class="search-button__icon"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <circle cx="11" cy="11" r="6.5" />
+            <path d="m16 16 4 4" />
+          </svg>
+        </summary>
+
+        <div class="search-panel" role="search">
+          <input
+            class="search-input"
+            type="search"
+            placeholder="Pesquisar produtos..."
+            aria-label="Pesquisar produtos"
+          >
+        </div>
+      </details>
+
       <button
         class="cart-button"
         type="button"
