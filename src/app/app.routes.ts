@@ -6,7 +6,6 @@ import { LayoutPublico } from './site/layout-publico/layout-publico';
 
 export const routes: Routes = [
 
-
 { path: '', component: LayoutPublico,
         children: [
             { path: 'pag-prod', component: PagProd },
