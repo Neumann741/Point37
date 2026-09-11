@@ -24,8 +24,8 @@ app-layout-publico > app-header {
     position: relative;
 }
 
-/* Somente a página inicial possui carrossel atrás do cabeçalho. */
-app-layout-publico:has(app-main-page app-carrossel) > app-header {
+/* O cabeçalho fica sobre qualquer página que tenha carrossel. */
+app-layout-publico:has(app-carrossel) > app-header {
     position: absolute;
     top: 0;
     right: 0;
@@ -38,14 +38,25 @@ app-main-page {
     display: block;
 }
 
-/* Mantém o cabeçalho transparente apenas quando houver carrossel. */
-app-layout-publico:has(app-main-page app-carrossel) app-header .topbar {
+/* Nas páginas sem carrossel, preserva o destaque visual do cabeçalho sem perder contraste. */
+app-layout-publico:not(:has(app-carrossel)) app-header .topbar,
+app-login app-header .topbar {
+    isolation: isolate;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 50% -120%, rgba(255, 255, 255, 0.35), transparent 58%),
+        linear-gradient(135deg, #5ba25b, #3f823f);
+    box-shadow: 0 8px 24px rgba(31, 79, 31, 0.18);
+}
+
+/* Mantém o cabeçalho transparente quando houver carrossel. */
+app-layout-publico:has(app-carrossel) app-header .topbar {
     isolation: isolate;
     overflow: visible;
     background-color: transparent !important;
 }
 
-app-layout-publico:has(app-main-page app-carrossel) app-header .topbar::before {
+app-layout-publico:has(app-carrossel) app-header .topbar::before {
     content: none;
 }
 

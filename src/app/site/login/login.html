@@ -1,1 +1,35 @@
-<p>login works!</p>
+<app-header></app-header>
+
+<main class="login-page">
+  <form class="login-card" (ngSubmit)="entrar()">
+    <p class="login-card__eyebrow">Point 37</p>
+    <h1>Entre na sua conta</h1>
+    <p>Acesse seus pedidos e favoritos.</p>
+
+    <label for="email">E-mail</label>
+    <input
+      id="email"
+      name="email"
+      type="email"
+      [(ngModel)]="email"
+      required
+      placeholder="voce@email.com"
+    >
+
+    <label for="senha">Senha</label>
+    <input
+      id="senha"
+      name="senha"
+      type="password"
+      [(ngModel)]="senha"
+      required
+      placeholder="Sua senha"
+    >
+
+    <button type="submit">Entrar</button>
+
+    @if (mensagem()) {
+      <p class="login-card__mensagem">{{ mensagem() }}</p>
+    }
+  </form>
+</main>
