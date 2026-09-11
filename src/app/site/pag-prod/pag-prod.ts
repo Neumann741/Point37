@@ -13,26 +13,23 @@ export class PagProd {
 
   protected readonly consumoService = inject(PagAdmService);
 
-  @ViewChild('modalProduto') modalProduto?: ElementRef<HTMLDialogElement>;
+  @ViewChild('detalheProduto') detalheProduto?: ElementRef<HTMLElement>;
 
   produtoSelecionado = signal<any>(null);
 
   abrirProduto(produto: any) {
     this.produtoSelecionado.set(produto);
-    document.body.style.overflow = 'hidden';
 
-    requestAnimationFrame(() => this.modalProduto?.nativeElement.showModal());
+    requestAnimationFrame(() => {
+      this.detalheProduto?.nativeElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center',
+      });
+    });
   }
 
   fecharProduto() {
-    const modal = this.modalProduto?.nativeElement;
-
-    if (modal?.open) {
-      modal.close();
-    }
-
     this.produtoSelecionado.set(null);
-    document.body.style.overflow = '';
   }
 
 
