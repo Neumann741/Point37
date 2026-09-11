@@ -1,7 +1,7 @@
 <form (submit)="cadastrarProduto($event)">
     <div class="campo-formulario">
         <label for="nome">Nome do produto</label>
-        <input id="nome" type="text" [formField]="postForm.nome" placeholder="Ex.: Café especial">
+        <input id="nome" type="text" [formField]="postForm.nome" placeholder="">
     @if (postForm.nome().touched() && postForm.nome().invalid()) {
         @for (erro of postForm.nome().errors(); track erro.kind) { <span class="erro">{{erro.message}}</span> }
     }
