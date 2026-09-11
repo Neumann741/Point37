@@ -1,4 +1,3 @@
-
 <app-carrossel></app-carrossel>
 
 @if (consumoService.postsDetails.isLoading()) {
@@ -7,60 +6,48 @@
     <p>Deu erro</p>
 }
 @else if(consumoService.postsDetails.hasValue()) {
-<app-carrossel></app-carrossel>
+
 <div class="produtos">
     @for (post of consumoService.postsDetails.value(); track post.id) {
-
         <div class="card-produto">
 
-            <button
-                class="detalhes-produto"
+            <button class="detalhes-produto"
                 type="button"
                 (click)="abrirProduto(post)"
-                [attr.aria-label]="'Ver detalhes de ' + post.nome"
-            >
-                <div class="imagem-container">
-                    <img
-                        class="produto-img"
-                        [src]="post.urlImagem"
-                        [alt]="post.nome"
-                    >
-                </div>
+                [attr.aria-label]="'Ver detalhes de ' + post.nome">
+                
+                <img class="imagem-prod" [src]="post.urlImagem" [alt]="post.nome">
             </button>
 
             <div class="info-produto">
+                <h1>{{post.nome}}</h1>
+                <p class="descricao">{{post.descricao}}</p>
+                <p class="preco">R$ {{post.preco}}</p>
 
-                <p class="nome-produto">
-                    {{ post.nome }}
-                </p>
-
-                <p class="preco">
-                    R${{ post.preco }}
-                </p>
-
-                <button class="botao-comprar">
-                    COMPRAR
+                <!-- BOTÃO DE COMPRAR -->
+                <button class="btn-comprar" type="button" >
+                    Comprar
                 </button>
-
-            </div>
-
+            </div>           
         </div>
-
     }
 </div>
-    }
-
+}
 
 @if (produtoSelecionado(); as produto){
-
     <div class="modal-produto" (click)="fecharProduto()">
         <article class="modal-produto-cont" (click)="$event.stopPropagation()">
-            <button class="modal-botao-fechar"type="button" (click)="fecharProduto()">×</button>
+            <button class="modal-botao-fechar" type="button" (click)="fecharProduto()">×</button>
 
             <img [src]="produto.urlImagem" [alt]="produto.nome">
             <h2>{{produto.nome}}</h2>
-            <p >{{produto.descricao}}</p>
-            <strong>R${{produto.preco}}</strong>
+            <p>{{produto.descricao}}</p>
+            <strong>R$ {{produto.preco}}</strong>
+
+            <!-- BOTÃO DE COMPRAR NO MODAL -->
+            <button class="btn-comprar" type="button" >
+                Comprar
+            </button>
         </article>
     </div>
 }
