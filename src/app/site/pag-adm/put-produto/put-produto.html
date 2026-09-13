@@ -1,1 +1,33 @@
-<p>put-produto works!</p>
+@if (consumoService.postsDetails.isLoading()) {
+  <p>Carregando produtos...</p>
+} @else if (consumoService.postsDetails.error()) {
+  <p>Não foi possível carregar os produtos.</p>
+} @else if (consumoService.postsDetails.hasValue()) {
+  <div class="produtos-edicao">
+    @for (produto of consumoService.postsDetails.value(); track produto.id) {
+      <div class="produto-edicao">
+        <img [src]="produto.urlImagem" [alt]="produto.nome" width="100" height="100">
+        <h3>{{ produto.nome }}</h3>
+        <button type="button" (click)="selecionarProduto(produto)">Editar</button>
+      </div>
+    }
+  </div>
+}
+
+@if (idProduto() !== null) {
+  <form (submit)="atualizarProduto($event)">
+    <label for="put-nome">Nome</label>
+    <input id="put-nome" type="text" [formField]="putForm.nome">
+
+    <label for="put-descricao">Descrição</label>
+    <input id="put-descricao" type="text" [formField]="putForm.descricao">
+
+    <label for="put-preco">Preço</label>
+    <input id="put-preco" type="number" step="0.01" [formField]="putForm.preco">
+
+    <label for="put-imagem">URL da imagem</label>
+    <input id="put-imagem" type="text" [formField]="putForm.urlImagem">
+
+    <button type="submit" [disabled]="putForm().invalid()">Salvar alterações</button>
+  </form>
+}
