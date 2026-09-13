@@ -10,12 +10,12 @@
     <button class="btn-fechar" type="button" aria-label="Fechar carrinho" (click)="fechar.emit()">×</button>
   </header>
 
-  @if (produtos.length) {
+  @if (carrinhoService.produtos.length) {
     <div class="carrinho-itens">
-      @for (produto of produtos; track produto.nome; let i = $index) {
+      @for (produto of carrinhoService.produtos; track produto.id; let i = $index) {
         <div class="produto">
           <div class="produto-imagem">
-            <img [src]="produto.imagem" [alt]="produto.nome">
+            <img [src]="produto.urlImagem" [alt]="produto.nome">
           </div>
 
           <div class="produto-info">

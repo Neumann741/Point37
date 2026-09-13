@@ -1,6 +1,7 @@
 import { Component, ElementRef, ViewChild, inject, signal } from '@angular/core';
 import { PagAdmService } from '../pag-adm/pag-adm-service';
 import { Carrossel } from "../carrossel/carrossel";
+import { CarrinhoService } from '../header/carrinho/carrinho-service';
 
 
 @Component({
@@ -12,10 +13,15 @@ import { Carrossel } from "../carrossel/carrossel";
 export class PagProd {
 
   protected readonly consumoService = inject(PagAdmService);
+  readonly carrinhoService = inject(CarrinhoService);
 
   @ViewChild('detalheProduto') detalheProduto?: ElementRef<HTMLElement>;
 
   produtoSelecionado = signal<any>(null);
+
+  comprar(produto: any) {
+    this.carrinhoService.adicionarProduto(produto);
+  }
 
   abrirProduto(produto: any) {
     this.produtoSelecionado.set(produto);

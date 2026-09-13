@@ -25,7 +25,7 @@
                 <p class="preco">R$ {{post.preco}}</p>
 
                 <!-- BOTÃO DE COMPRAR -->
-                <button class="btn-comprar" type="button" >
+                <button class="btn-comprar" type="button" (click)="comprar(post)">
                     Comprar
                 </button>
             </div>           
@@ -45,7 +45,7 @@
             <strong>R$ {{produto.preco}}</strong>
 
             <!-- BOTÃO DE COMPRAR NO MODAL -->
-            <button class="btn-comprar" type="button" >
+            <button class="btn-comprar" type="button" (click)="comprar(produto)">
                 Comprar
             </button>
         </article>
