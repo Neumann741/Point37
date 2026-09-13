@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, inject, Output } from '@angular/core';
+import { CarrinhoService } from './carrinho-service';
 
 @Component({
   imports: [],
@@ -10,40 +11,21 @@ import { Component, EventEmitter, Output } from '@angular/core';
 export class Carrinho {
   @Output() fechar = new EventEmitter<void>();
 
-  produtos = [
-    {
-      nome: 'Produto Exemplo',
-      preco: 29.90,
-      quantidade: 1,
-      imagem: 'assets/tanqueray-transparente.png'
-    },
-    {
-      nome: 'Outro produto',
-      preco: 49.90,
-      quantidade: 2,
-      imagem: 'assets/bombay-transparente.png'
-
-    }
-  ];
+  readonly carrinhoService = inject(CarrinhoService);
 
   get subtotal(): number {
-    return this.produtos.reduce(
-      (total, produto) => total + produto.preco * produto.quantidade,
-      0,
-    );
+    return this.carrinhoService.calcularSubtotal();
   }
 
-  diminuirQuantidade(index: number): void {
-    if (this.produtos[index].quantidade > 1) {
-      this.produtos[index].quantidade--;
-    }
+  diminuirQuantidade(index: number) {
+    this.carrinhoService.diminuirQuantidade(index);
   }
 
-  aumentarQuantidade(index: number): void {
-    this.produtos[index].quantidade++;
+  aumentarQuantidade(index: number) {
+    this.carrinhoService.aumentarQuantidade(index);
   }
 
-  removerProduto(index: number): void {
-    this.produtos.splice(index, 1);
+  removerProduto(index: number) {
+    this.carrinhoService.removerProduto(index);
   }
 }
