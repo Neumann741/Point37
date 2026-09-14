@@ -18,6 +18,7 @@ export const routes: Routes = [
     { path: 'login', component: Login, },
    { path: 'carrinho', component: Carrinho },
   { path: 'finalizar-compra', component: FinalizarCompra },
+  { path: 'sobre', component: Sobre}
 
 
 
