@@ -1,6 +1,6 @@
 import { Component, EventEmitter, inject, Output } from '@angular/core';
 import { CarrinhoService } from './carrinho-service';
-
+import { Router } from '@angular/router';
 @Component({
   imports: [],
   selector: 'app-carrinho',
@@ -28,4 +28,14 @@ export class Carrinho {
   removerProduto(index: number) {
     this.carrinhoService.removerProduto(index);
   }
+constructor(private router: Router) {}
+
+   finalizarCompra(){
+    if (this.carrinhoService.produtos.length === 0){
+      return alert('O carrinho está vazio.')
+    }
+
+    this.router.navigate(['./finalizar-compra']);
+  }
 }
+
