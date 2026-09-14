@@ -19,6 +19,13 @@ export class PagAdmService {
         return this.httpClient.delete(this.apiUrl + '/' + id);
     }
 
+    atualizarProdutoService(id: number, produtoAtualizado: Posts) {
+        return this.httpClient.put<PostResponse>(
+            this.apiUrl + '/' + id,
+            produtoAtualizado
+        );
+    }
+
     readonly postsDetails = httpResource<InterProd[]>(
         () => this.apiUrl,
         { defaultValue: [] }
