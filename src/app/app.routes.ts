@@ -3,6 +3,7 @@ import { PagAdm } from './site/pag-adm/pag-adm';
 import { PagProd } from './site/pag-prod/pag-prod';
 import { Login } from './site/login/login';
 import { LayoutPublico } from './site/layout-publico/layout-publico';
+import { Sobre } from './site/sobre/sobre';
 
 export const routes: Routes = [
 
@@ -10,6 +11,7 @@ export const routes: Routes = [
         children: [
             { path: 'pag-prod', component: PagProd },
             { path: 'pag-adm', component: PagAdm },
+            { path: 'sobre', component: Sobre },
             { path: '', redirectTo: 'main-page', pathMatch: 'full' },] },
     { path: 'login', component: Login, },
 
