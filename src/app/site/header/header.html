@@ -2,12 +2,10 @@
     <div class="logo-space">
     <img class="site-logo" src="assets/point37-logo.png?v=3" alt="Point 37">
     </div>
-    
+
 
     <nav class="main-nav" aria-label="Navegação principal">
       <a routerLink="/pag-prod">Drinks</a>
-      <a routerLink="">Sales</a>
-      <a routerLink="">Delivery</a>
     </nav>
 
     <div class="cart-space">
@@ -67,3 +65,4 @@
 @if (statusCarrinho()) {
   <app-carrinho (fechar)="fechaCarrinho()"></app-carrinho>
 }
+

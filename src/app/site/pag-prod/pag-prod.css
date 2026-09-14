@@ -95,3 +95,11 @@
 .btn-comprar:hover {
     background: #4a8a5c;
 }
+
+.img-banner {
+    display: flex;
+    margin: auto;
+    border-radius: 30px;
+    margin-bottom: 30px;
+    margin-top: 40px;
+}
