@@ -4,6 +4,8 @@ import { PagProd } from './site/pag-prod/pag-prod';
 import { Login } from './site/login/login';
 import { LayoutPublico } from './site/layout-publico/layout-publico';
 import { Sobre } from './site/sobre/sobre';
+import { FinalizarCompra } from './site/header/finalizar-compra/finalizar-compra';
+import { Carrinho } from './site/header/carrinho/carrinho';
 
 export const routes: Routes = [
 
@@ -14,6 +16,8 @@ export const routes: Routes = [
             { path: 'sobre', component: Sobre },
             { path: '', redirectTo: 'main-page', pathMatch: 'full' },] },
     { path: 'login', component: Login, },
+   { path: 'carrinho', component: Carrinho },
+  { path: 'finalizar-compra', component: FinalizarCompra },
 
 
 

@@ -39,7 +39,7 @@
         <span>Subtotal</span>
         <strong>R$ {{ subtotal.toFixed(2).replace('.', ',') }}</strong>
       </div>
-      <button class="btn-finalizar" type="button">
+      <button class="btn-finalizar" type="button" (click)="finalizarCompra()">
         Finalizar compra
         <span aria-hidden="true">→</span>
       </button>
